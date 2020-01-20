@@ -6,6 +6,7 @@ import Navbar from './components/layout/Navbar';
 import Home from './components/layout/Home';
 import BeerDetail from './components/beers/BeerDetail';
 import RandomBeer from './components/beers/RandomBeer';
+import BeerForm from './components/beers/BeerForm';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route exact path='/beers' component={BeerList} />
             <Route exact path='/beers/:id' component={BeerDetail} />
             <Route exact path='/random' component={RandomBeer} />
+            <Route exact path='/new-beer' component={BeerForm} />
           </Switch>
         </div>
       </div>
