@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Beers from '../../services/Beers';
+import BeersService from '../../services/BeersService';
 import BeerInfo from './BeerInfo.js';
 import './BeerDetail.css';
 
 export default class BeerDetail extends Component {
 	state = {};
 	componentDidMount() {
-		Beers.detail(this.props.match.params.id).then(
+		BeersService.detail(this.props.match.params.id).then(
 			beer => this.setState({ beer: beer, error: undefined })
 		).catch(
 			error => this.setState({ error: error })

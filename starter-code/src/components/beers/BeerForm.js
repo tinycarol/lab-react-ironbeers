@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Beers from '../../services/Beers';
+import BeersService from '../../services/BeersService';
 import { Redirect } from 'react-router-dom';
 
 export default class BeerForm extends Component {
@@ -20,7 +20,7 @@ export default class BeerForm extends Component {
 	handleFormSubmit(e) {
 		e.preventDefault();
 
-		Beers.add(this.state.beer).then(
+		BeersService.add(this.state.beer).then(
 			beer => this.setState({ created: true })
 		).catch(
 			error => this.setState({ error: error })

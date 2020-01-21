@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Beers from '../../services/Beers';
+import BeersService from '../../services/BeersService';
 import BeerInfo from './BeerInfo.js';
 import './BeerDetail.css';
 
 export default class RandomBeer extends Component {
 	state = {};
 	componentDidMount() {
-		Beers.random().then(
+		BeersService.random().then(
 			beer => this.setState({ beer: beer, error: undefined })
 		).catch(
 			error => this.setState({ error: error })

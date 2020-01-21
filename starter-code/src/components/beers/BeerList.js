@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Beers from '../../services/Beers';
+import BeersService from '../../services/BeersService';
 import './BeerList.css';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ export default class BeerList extends Component {
 	}
 
 	componentDidMount() {
-		Beers.list().then(
+		BeersService.list().then(
 			beers => this.setState({ beers: beers, error: undefined })
 		).catch(
 			error => this.setState({ error: error })
